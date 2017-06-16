@@ -1,0 +1,56 @@
+<html>
+    
+    <head>
+        <style>
+            
+            *{box-sizing: border-box;}
+            body, html{
+                height: 100%;
+                width: 100%;
+                overflow: hidden;
+            }
+            
+            #div1{
+                height: 80%;
+                width: 100%;
+                
+                border: 1px solid;
+            }
+            
+            #textbox{
+                height: 40%;
+                width: 60%;
+            }
+            
+            #hoeveelWoorden{
+             border: 1px solid;       
+            }
+            #hoeveelCharacters{
+                border: 1px solid;
+            }
+            
+        </style>
+        
+    </head>
+    
+    <body>
+        
+        <div id="div1">
+            <textarea id="textbox" oninput="telAlles()"></textarea><br>
+            <span id="hoeveelWoorden"></span><br>
+            <span id="hoeveelCharacters"></span>
+        </div>
+        
+        <script>
+            function telAlles(){
+                var textbox = document.getElementById("textbox").value;
+                var woorden = textbox.split(' ');
+                document.getElementById("hoeveelWoorden").innerHTML = "woorden: " + woorden.length;
+                var characters = textbox.split('');
+                document.getElementById("hoeveelCharacters").innerHTML = "characters: " + characters.length;
+            }
+        </script>
+        
+    </body>
+    
+</html>
