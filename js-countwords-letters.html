@@ -36,7 +36,7 @@
     <body>
         
         <div id="div1">
-            <textarea id="textbox" oninput="telAlles()"></textarea><br>
+            <textarea id="textbox" oninput="telAlles()"></textarea> <button onclick="Capitalize()">Capitalize</button><br>
             <span id="hoeveelWoorden"></span><br>
             <span id="hoeveelCharacters"></span>
         </div>
@@ -48,6 +48,13 @@
                 document.getElementById("hoeveelWoorden").innerHTML = "woorden: " + woorden.length;
                 var characters = textbox.split('');
                 document.getElementById("hoeveelCharacters").innerHTML = "characters: " + characters.length;
+            }
+            function Capitalize(){
+                if(document.getElementById("textbox").style.textTransform == "capitalize"){
+                  document.getElementById("textbox").style.textTransform = "none";  
+                }else{
+                    document.getElementById("textbox").style.textTransform = "capitalize";
+                }
             }
         </script>
         
